@@ -23,10 +23,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        working-directory: ./typescript
+        working-directory: ./nodejs
         run: npm install
       - name: Run prebuildify for ${{ matrix.os }} - ${{ matrix.arch }}
-        working-directory: ./typescript
+        working-directory: ./nodejs
         run: npm run prebuildify
         env:
           TARGET_ARCH: ${{ matrix.arch }}
@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: prebuilds-${{ matrix.os }}-${{ matrix.arch }}
-          path: typescript/prebuilds
+          path: nodejs/prebuilds
   publish:
     needs: build
     runs-on: ubuntu-latest
@@ -46,24 +46,24 @@ jobs:
           node-version: 20.x
           registry-url: "https://registry.npmjs.org"
       - name: Install dependencies
-        working-directory: ./typescript
+        working-directory: ./nodejs
         run: npm install
       - name: Download all prebuild artifacts
         uses: actions/download-artifact@v5
         with:
-          path: typescript/prebuilds-temp
+          path: nodejs/prebuilds-temp
           pattern: prebuilds-*
           merge-multiple: true
       - name: Move prebuilds to correct location
         run: |
-          mkdir -p typescript/prebuilds
-          mv typescript/prebuilds-temp/* typescript/prebuilds/
-          rm -rf typescript/prebuilds-temp
+          mkdir -p nodejs/prebuilds
+          mv nodejs/prebuilds-temp/* nodejs/prebuilds/
+          rm -rf nodejs/prebuilds-temp
       - name: Build TypeScript
-        working-directory: ./typescript
+        working-directory: ./nodejs
         run: npm run build-ts
       - name: Publish to npm
-        working-directory: ./typescript
+        working-directory: ./nodejs
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
