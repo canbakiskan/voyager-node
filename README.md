@@ -24,3 +24,21 @@ Install via npm:
 ```sh
 npm install voyager-node
 ```
+
+## Usage
+
+```js
+// ES module
+import voyager from "voyager-node";
+index = Index.loadIndex(filepath);
+// ... use voyager-node API ...
+```
+
+or
+
+```js
+// CommonJS
+const voyager = require("voyager-node");
+index = Index.loadIndex(filepath);
+// ... use voyager-node API ...
+```
