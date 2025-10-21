@@ -1,6 +1,6 @@
 {
   "name": "voyager-node",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Unofficial Node.js bindings for Spotify's Voyager Library",
   "main": "dist/voyager-node.js",
   "types": "dist/voyager-node.d.ts",
