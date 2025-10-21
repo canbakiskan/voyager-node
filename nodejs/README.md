@@ -2,10 +2,6 @@
 
 [![npm version](https://img.shields.io/npm/v/voyager-node.svg)](https://www.npmjs.com/package/voyager-node)
 
-**Homepage:** [https://github.com/canbakiskan/voyager-node](https://github.com/canbakiskan/voyager-node)
-
-**Repository:** [https://github.com/canbakiskan/voyager-node](https://github.com/canbakiskan/voyager-node)
-
 Node.js bindings for [Spotify's Voyager](https://github.com/spotify/voyager) approximate nearest neighbor (ANN) search library.
 
 ---

@@ -18,13 +18,12 @@
   "License": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/spotify/voyager.git",
-    "directory": "js"
+    "url": "https://github.com/canbakiskan/voyager-node.git"
   },
   "bugs": {
-    "url": "https://github.com/spotify/voyager/issues"
+    "url": "https://github.com/canbakiskan/voyager-node/issues"
   },
-  "homepage": "https://github.com/spotify/voyager#readme",
+  "homepage": "https://github.com/canbakiskan/voyager-node",
   "files": [
     "src",
     "dist",
