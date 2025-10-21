@@ -30,7 +30,8 @@
     "dist",
     "prebuilds",
     "voyager_src",
-    "binding.gyp"
+    "binding.gyp",
+    "README.md"
   ],
   "dependencies": {
     "node-addon-api": "^8.5.0",
